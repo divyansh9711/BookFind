@@ -40,6 +40,9 @@ public class BookAdapter extends ArrayAdapter<Book> {
         TextView bookPrice = (TextView) listItemView.findViewById(R.id.price);
         bookPrice.setText(currentBook.getBookPrice());
 
+        TextView author = (TextView) listItemView.findViewById(R.id.author_name);
+        author.setText(currentBook.getBookAuthor());
+
         return listItemView;
     }
 }
