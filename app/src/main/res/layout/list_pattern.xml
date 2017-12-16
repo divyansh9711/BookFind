@@ -23,7 +23,7 @@
         android:layout_height ="match_parent">
         <TextView
             android:id="@+id/author_name"
-            android:layout_marginTop="4sp"
+            android:layout_marginTop="5sp"
             android:textSize="15sp"
             android:textColor="#B4BAC0"
             android:text="Paulo Cohelo"
@@ -43,16 +43,23 @@
                 android:layout_height="0dp"/>
 
     </LinearLayout>
-    <TextView
+    <LinearLayout
+        android:layout_width="0dp"
+        android:orientation="vertical"
+        android:layout_weight="0.7"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginTop="5sp"
             android:textColor="#B4BAC0"
             android:id="@+id/price"
             android:text="$250"
             android:textAlignment="textEnd"
             android:textSize="15sp"
-            android:layout_width="0dp"
-            android:layout_height="65dp"
-            android:layout_weight="0.7"/>
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
 
+    </LinearLayout>
 
 
 

@@ -2,6 +2,7 @@ package com.example.divyanshsingh.bookfind;
 
 import android.app.LoaderManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.Loader;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -9,6 +10,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -53,6 +55,16 @@ public class BookActivity extends AppCompatActivity implements LoaderManager.Loa
 
         LoaderManager loaderManager = getLoaderManager();
         loaderManager.initLoader(1, null, this);
+
+        booksListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Book book = (Book) parent.getItemAtPosition(position);
+                Intent intent = new Intent(BookActivity.this,BookDescriptionActivity.class);
+                intent.putExtra("BOOK",book);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

@@ -23,6 +23,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.divyanshsingh.bookfind.BookActivity"/>
         </activity>
+        <activity
+            android:name="com.example.divyanshsingh.bookfind.BookDescriptionActivity"
+            android:label="Book Description">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.divyanshsingh.bookfind.BookActivity"/>
+        </activity>
 
     </application>
     <uses-permission android:name="android.permission.INTERNET"/>

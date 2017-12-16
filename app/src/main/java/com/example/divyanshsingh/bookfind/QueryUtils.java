@@ -119,6 +119,10 @@ public class QueryUtils {
                 JSONObject book = totalBooks.getJSONObject(i);
                 JSONObject properties = book.getJSONObject("volumeInfo");
                 String title = properties.getString("title");
+                String publisher = properties.getString("publisher");
+                String publishDate = properties.getString("publishedDate");
+                String description = properties.getString("description");
+                String infoLink = properties.getString("infoLink");
                 JSONArray authors = properties.getJSONArray("authors");
                 String author = authors.getString(0);
                 String price ;
@@ -140,7 +144,7 @@ public class QueryUtils {
                     price = "N/A";
                 }
 
-                Book temp = new Book(title,author,price,rating);
+                Book temp = new Book(title,author,price,rating,publisher,publishDate,description,infoLink);
                 books.add(temp);
             }
         }
