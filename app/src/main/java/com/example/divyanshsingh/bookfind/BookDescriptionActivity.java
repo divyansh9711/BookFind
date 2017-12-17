@@ -1,9 +1,12 @@
 package com.example.divyanshsingh.bookfind;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 /**
@@ -16,9 +19,9 @@ public class BookDescriptionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.description_activity);
         Intent intent = getIntent();
-        Book book = (Book) intent.getSerializableExtra("BOOK");
+        final Book book = (Book) intent.getSerializableExtra("BOOK");
 
-        TextView title = (TextView) findViewById(R.id.book_title);
+        TextView title = (TextView) findViewById(R.id.title);
         title.setText(book.getBookName());
 
         TextView authorName = (TextView) findViewById(R.id.aurhor_name);
@@ -38,5 +41,16 @@ public class BookDescriptionActivity extends AppCompatActivity {
 
         TextView description = (TextView) findViewById(R.id.description);
         description.setText(book.getDiscription());
+
+        Button info = (Button) findViewById(R.id.info_link);
+
+        info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(Intent.ACTION_VIEW, Uri.parse(book.getWebPage()));
+                startActivity(intent1);
+            }
+        });
+
     }
 }
